@@ -12,7 +12,7 @@ Description
 A graph is a pictorial representation of a set of objects. Object pairs in a graph are connected by links. The interconnected objects represented by points are called vertices, and the links that connect the vertices are edges.
 In the first stage of the project, we will start by creating several vertices. A vertex can be represented by a labeled circle.
 
-- **Stage 2/7: Click to vertex**
+- **Stage 2/7: Click to vertex**  
 Description
 There is a problem that we faced in the previous stage. We could create vertices only by hardwiring them inside our code. We want our users to interact with our application. So, in this stage, the program will create vertices when users click on the screen.
 When users click on the graph, prompt a dialog box JOptionPane that contains a TextBox, an Ok button, and a Cancel button.
