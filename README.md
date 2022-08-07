@@ -1,6 +1,10 @@
 # Graph-Algorithms-Visualizer-test-project
 Graph-Algorithms Visualizer test project on java, swing framework
 
+## Demo
+
+![](https://github.com/NikSsh/readmeGifs/graph-demo.gif)
+
 ## Stages
 
 Stage 1/7: Drawing circles
