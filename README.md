@@ -3,7 +3,7 @@ Graph-Algorithms Visualizer test project on java, swing framework
 
 ## Demo
 
-![graph-demo](https://user-images.githubusercontent.com/71446610/183302612-5f8fd4d4-2022-4e20-9c21-2bef68a45c22.gif)
+![Graph-Alg-demo](https://user-images.githubusercontent.com/71446610/183358688-19897d56-6cff-49fb-b3a1-6bf5e8c0da25.gif)
 
 ## Stages
 
