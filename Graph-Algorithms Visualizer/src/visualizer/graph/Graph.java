@@ -77,8 +77,6 @@ public class Graph extends JPanel implements MouseListener {
     public void setCurrentAlgorithmMode(algorithmMode currentAlgorithmMode) {
         this.currentAlgorithmMode = currentAlgorithmMode;
         resetColors();
-        algorithmsInfoLabel.setText("Please choose a starting vertex");
-        algorithmsInfoLabel.setVisible(true);
     }
 
     public void setCurrentMode(editMode currentMode) {
@@ -116,6 +114,7 @@ public class Graph extends JPanel implements MouseListener {
     public void mouseClicked(MouseEvent e) {
 
         if (currentAlgorithmMode == algorithmMode.NONE) {
+            algorithmsInfoLabel.setVisible(false);
             switch (currentMode) {
                 case ADD_VERTEX: {
                     graphEditor.setAction(new AddVertexAction(this, bufferVertexDeque, adjacencyMap, edgesMap));
@@ -142,6 +141,8 @@ public class Graph extends JPanel implements MouseListener {
                 }
             }
         } else {
+            algorithmsInfoLabel.setText("Please choose a starting vertex");
+            algorithmsInfoLabel.setVisible(true);
             switch (currentAlgorithmMode) {
                 case BFS: {
                     new AlgorithmWorker(algorithmsInfoLabel, e.getPoint(), new BfsAlgorithm(this, adjacencyMap, edgesMap))
@@ -166,6 +167,7 @@ public class Graph extends JPanel implements MouseListener {
                 case PRIMS: {
                     new AlgorithmWorker(algorithmsInfoLabel, e.getPoint(), new PrimsAlgorithm(this, adjacencyMap, edgesMap))
                             .execute();
+                    break;
                 }
             }
         }
@@ -210,6 +212,7 @@ public class Graph extends JPanel implements MouseListener {
         }
         adjacencyMap.clear();
 
+        algorithmsInfoLabel.setVisible(false);
         repaint();
         revalidate();
     }

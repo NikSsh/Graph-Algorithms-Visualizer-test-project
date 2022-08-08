@@ -20,7 +20,7 @@ public class PrimsAlgorithm extends Algorithm{
         try {
             Vertex startVertex = null;
             for (Vertex vertex : adjacencyMap.keySet()) {
-                if ((clickedPoint.getX() >= vertex.getX() - 50 && clickedPoint.getX() <= vertex.getX() + 50) && (clickedPoint.getY() >= vertex.getY() - 50 && clickedPoint.getY() <= vertex.getY() + 50)) {
+                if (vertex.containsPoint(clickedPoint)) {
                     startVertex = vertex;
                     break;
                 }
@@ -32,7 +32,6 @@ public class PrimsAlgorithm extends Algorithm{
                 graph.repaint();
                 String result = primsAlgorithm(startVertex).stream().reduce((accumulator, element) -> accumulator = accumulator + ", " + element).orElse("ERROR");
                 return Optional.of(result);
-                //algorithmsInfoLabel.setBounds((int) (WIDTH - (algorithmsInfoLabel.getText().length() / 2d) * 16) / 2, 510, (int) (algorithmsInfoLabel.getText().length() * 16), 20);
             }
         } catch (InterruptedException exception) {
             exception.printStackTrace();

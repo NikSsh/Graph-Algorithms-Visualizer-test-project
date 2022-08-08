@@ -45,7 +45,6 @@ public class Edge extends JComponent {
         JLabel label = new JLabel(String.valueOf(weight));
         Font font = new Font("Courier", Font.BOLD, 15);
         label.setName(String.format("EdgeLabel <%s -> %s>", startVertex.getId(), endVertex.getId()));
-        System.out.println(getName());
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setVerticalAlignment(SwingConstants.CENTER);
         label.setFont(font);

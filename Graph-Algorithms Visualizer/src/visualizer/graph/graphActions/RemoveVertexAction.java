@@ -45,17 +45,6 @@ public class RemoveVertexAction extends Action{
                         graph.remove(edgeLabel);
                     }
                     edgesBuffer.offer(edge);
-                    //edgesMap.remove(edge);
-
-//                            Edge reversedEdge = edge.getReversedEdge();
-//                            JLabel reversedLabel = edgesMap.get(reversedEdge);
-//
-//                            edgesMap.remove(reversedEdge);
-//                            remove(reversedEdge);
-//
-//                            if (reversedLabel != null) {
-//                                remove(reversedLabel);
-//                            }
                 }
 
             }

@@ -38,7 +38,7 @@ public class AddVertexAction extends Action{
                     graph.revalidate();
                     valid = true;
                 } else {
-                    //JOptionPane.showMessageDialog(graph, "Input must be one character long", "Error. Try again", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(graph, "Input must be one character long", "Error. Try again", JOptionPane.ERROR_MESSAGE);
                 }
             } while (!valid);
         }

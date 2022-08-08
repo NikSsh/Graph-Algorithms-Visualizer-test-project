@@ -51,7 +51,7 @@ public class Vertex extends JPanel {
     }
 
     public boolean containsPoint(Point point) {
-        return ((point.getX() >= this.getX() - VERTEX_DIM + 10 && point.getX() <= this.getX() + VERTEX_DIM + 10) && (point.getY() >= this.getY() - VERTEX_DIM + 10 && point.getY() <= this.getY() + VERTEX_DIM + 10));
+        return ((point.getX() >= this.getX() - VERTEX_DIM / 2.0 && point.getX() <= this.getX() + VERTEX_DIM  / 2.0) && (point.getY() >= this.getY() - VERTEX_DIM / 2.0 && point.getY() <= this.getY() + VERTEX_DIM / 2.0));
     }
 
     @Override

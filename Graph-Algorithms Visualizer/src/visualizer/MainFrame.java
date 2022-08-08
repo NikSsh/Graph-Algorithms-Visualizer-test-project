@@ -19,9 +19,6 @@ public class MainFrame extends JFrame {
         setVisible(true);
     }
 
-    /**
-     * Initializes all components, adds them to the main frame
-     */
     void initComponents() {
         JLabel modeLabel = new JLabel("Current Mode -> " + Graph.editMode.ADD_VERTEX.getStrMode());
         modeLabel.setName("Mode");

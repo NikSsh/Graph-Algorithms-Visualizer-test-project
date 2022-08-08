@@ -21,7 +21,7 @@ public class AddEdgeAction extends Action{
         Point clickedPoint = new Point(e.getX() + DIFF_X, e.getY() + DIFF_Y);
         if (bufferVertexDeque.isEmpty()) {
             for (Vertex vertex : adjacencyMap.keySet()) {
-                if ((clickedPoint.getX() >= vertex.getX() - vertexRadius && clickedPoint.getX() <= vertex.getX() + vertexRadius) && (clickedPoint.getY() >= vertex.getY() - vertexRadius && clickedPoint.getY() <= vertex.getY() + vertexRadius)) {
+                if (vertex.containsPoint(clickedPoint)) {
                     vertex.setActiveColor(true);
                     graph.repaint();
                     graph.revalidate();
@@ -31,7 +31,7 @@ public class AddEdgeAction extends Action{
             }
         } else {
             for (Vertex vertex : adjacencyMap.keySet()) {
-                if ((clickedPoint.getX() >= vertex.getX() - vertexRadius && clickedPoint.getX() <= vertex.getX() + vertexRadius) && (clickedPoint.getY() >= vertex.getY() - vertexRadius && clickedPoint.getY() <= vertex.getY() + vertexRadius)) {
+                if (vertex.containsPoint(clickedPoint)) {
                     bufferVertexDeque.add(vertex);
                     break;
                 }
@@ -71,18 +71,17 @@ public class AddEdgeAction extends Action{
                             valid = true;
 
                         } catch (NumberFormatException nfe) {
-                            //JOptionPane.showMessageDialog(this, "Input must be a number", "Error. Try again", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(graph, "Input must be a number", "Error. Try again", JOptionPane.ERROR_MESSAGE);
                         }
                     }
                 } while (!valid);
                 bufferVertexDeque.clear();
             } else {
-//                        if (!bufferVertexDeque.isEmpty()) {
-//                            bufferVertexDeque.poll().setActiveColor(false);
-//                            repaint();
-//                            revalidate();
-//                            bufferVertexDeque.clear();
-//                        }
+                if (!bufferVertexDeque.isEmpty()) {
+                    bufferVertexDeque.poll().setActiveColor(false);
+                    graph.repaint();
+                    bufferVertexDeque.clear();
+                }
             }
         }
     }

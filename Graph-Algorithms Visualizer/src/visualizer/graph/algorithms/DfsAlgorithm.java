@@ -25,7 +25,7 @@ public class DfsAlgorithm extends Algorithm{
     private Optional<String> dfsAlgorithm(Point clickedPoint) {
         Vertex startVertex = null;
         for (Vertex vertex : adjacencyMap.keySet()) {
-            if ((clickedPoint.getX() >= vertex.getX() - 50 && clickedPoint.getX() <= vertex.getX() + 50) && (clickedPoint.getY() >= vertex.getY() - 50 && clickedPoint.getY() <= vertex.getY() + 50)) {
+            if (vertex.containsPoint(clickedPoint)) {
                 startVertex = vertex;
                 break;
             }
