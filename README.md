@@ -1,6 +1,9 @@
 # Graph-Algorithms-Visualizer-test-project
 Graph-Algorithms Visualizer test project on java, swing framework
 
+## Description
+    This program allows you to add/remove vertices and edges, supports the visualization of multiple algorithms: BFS, DFS, Dijkstra's Algorithm, Prim's algorithm.
+
 ## Demo
 
 ![Graph-Alg-demo](https://user-images.githubusercontent.com/71446610/183358688-19897d56-6cff-49fb-b3a1-6bf5e8c0da25.gif)
